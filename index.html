@@ -98,5 +98,16 @@
     >
       INGRESA AQUÍ - Reserva por WhatsApp
     </a>
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        const observer = new MutationObserver((mutations, obs) => {
+          const badge = document.getElementById('netlify-badge') || document.querySelector('a[href*="netlify.com"]');
+          if (badge) {
+            badge.remove();
+          }
+        });
+        observer.observe(document.body, { childList: true, subtree: true });
+      });
+    </script>
   </body>
 </html>
